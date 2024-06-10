@@ -5,7 +5,6 @@ import type { User } from "../App";
 type ProfileProps = Pick<
   User,
   | "name"
-  | "age"
   | "gender"
   | "date_of_birth"
   | "phone_number"
@@ -16,7 +15,6 @@ type ProfileProps = Pick<
 
 export const Profile: React.FC<ProfileProps> = ({
   name,
-  age,
   gender,
   date_of_birth,
   profile_picture,
@@ -36,7 +34,7 @@ export const Profile: React.FC<ProfileProps> = ({
             <ProfileItem type="insurance_type" value={insurance_type} />
         </div>
         <div className="flex justify-center mt-10">
-          <button className="font-bold text-sm px-10 py-3 rounded-full bg-[#01F0D0]">Show All Information</button>
+          <button className="font-bold text-sm px-10 py-3 rounded-full bg-green">Show All Information</button>
         </div>
     </div>
   );

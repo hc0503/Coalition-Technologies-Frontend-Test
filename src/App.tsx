@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+// @ts-ignore
+import { CgSpinnerTwo } from '@react-icons/all-files/cg/CgSpinnerTwo';
 
 import { Navbar } from "./components/Navbar";
-import { Sidebar } from "./components/Sidebar";
+import { Patients } from "./components/Patients";
 import { Profile } from "./components/Profile";
+import { LabResults } from "./components/LabResults";
+import { DiagnosisHistory } from "./components/DiagnosisHistory";
+import { DiagnosticList } from "./components/DiagnosticList";
 
 export type User = {
   name: string;
@@ -13,6 +18,7 @@ export type User = {
   phone_number: string;
   emergency_contact: string;
   insurance_type: string;
+  lab_results: string[];
 };
 
 function App() {
@@ -46,10 +52,20 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="flex justify-between gap-8">
-        <Sidebar />
-        <Profile {...jessica} />
-      </div>
+      {users.length > 0 && <div className="flex flex-1 overflow-hidden justify-between gap-8">
+        <Patients users={users} />
+        <div className="flex-1 mt-8">
+          <DiagnosisHistory />
+          <DiagnosticList />
+        </div>
+        <div className="flex flex-col">
+          <Profile {...jessica} />
+          <LabResults {...jessica} />
+        </div>
+      </div>}
+      {users.length === 0 && (
+        <CgSpinnerTwo size={50} className="h-full text-green animate-spin m-auto" />
+      )}
     </>
   );
 }

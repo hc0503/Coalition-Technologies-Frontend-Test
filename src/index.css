@@ -3,9 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        background-color: #F6F7F8;
-        padding: 18px;
+    #root {
         font-family: Manrope;
+        @apply overflow-hidden flex flex-col h-screen p-[17px] bg-[#F6F7F8];
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-[6px];
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-[#E3E4E6] rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-[#072635] rounded-full;
     }
 }
