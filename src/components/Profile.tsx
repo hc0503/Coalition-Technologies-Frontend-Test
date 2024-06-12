@@ -24,7 +24,7 @@ export const Profile: React.FC<ProfileProps> = ({
 }) => {
   return (
     <div className="bg-white py-8 px-5 mt-5 rounded-2xl">
-      <img src={profile_picture} alt={name} className="w-52 h-52 mx-16" />
+      <img src={profile_picture} alt={name} className="w-52 h-52 m-auto" />
       <h1 className="text-center text-2xl font-extrabold mt-6 mb-8">{name}</h1>
       <div className="grid gap-6">
         <ProfileItem type="date_of_birth" value={date_of_birth} />

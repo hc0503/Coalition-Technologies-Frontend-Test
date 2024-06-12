@@ -89,7 +89,7 @@ function App() {
       {users.length === 0 && (
         <CgSpinnerTwo
           size={50}
-          className="h-full text-green animate-spin m-auto"
+          className="h-full text-green animate-spin mx-auto"
         />
       )}
     </>
